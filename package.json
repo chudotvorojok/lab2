@@ -16,7 +16,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "webpack-build": "webpack --mode=production"
-    
   },
   "eslintConfig": {
     "extends": "react-app"
