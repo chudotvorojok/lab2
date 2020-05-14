@@ -1,115 +1,77 @@
-import React, { Component } from "react";
-import "./App.css";
-import Button from "./components/Button";
-import Input from "./components/Input";
-import ClearButton from "./components/ClearButton";
+import React from 'react';
 
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      input: "",
-      previousNumber: "",
-      currentNumber: "",
-      operator: ""
+      firstnumber: '',
+      secondnumber: '',
     };
+    this.firstnumber_c = this.firstnumber_c.bind(this);
+    this.secondnumber_c = this.secondnumber_c.bind(this);
+    this.calculate = this.calculate.bind(this);
+    this.calculate_a = this.calculate_a.bind(this);
+    this.calculate_b = this.calculate_b.bind(this);
+    this.calculate_c = this.calculate_c.bind(this);
   }
-  addToInput = value => {
-    this.setState({ input: this.state.input + value });
-  };
-  addZeroToInput = value => {
-    if (this.state.input !== "") {
-      this.setState({ input: this.state.input + value });
-    }
-  };
-  addDecimalToInput = value => {
-    if (this.state.input.indexOf(".") === -1) {
-      this.setState({ input: this.state.input + value });
-    }
-  };
-  clearInput = () => {
-    this.setState({ input: "" });
-  };
-  add = () => {
-    this.state.previousNumber = this.state.input;
-    this.setState({ input: "" });
-    this.state.operator = "plus";
-  };
-  multiply = () => {
-    this.state.previousNumber = this.state.input;
-    this.setState({ input: "" });
-    this.state.operator = "multiply";
-  };
-  subtract = () => {
-    this.state.previousNumber = this.state.input;
-    this.setState({ input: "" });
-    this.state.operator = "minus";
-  };
-  divide = () => {
-    this.state.previousNumber = this.state.input;
-    this.setState({ input: "" });
-    this.state.operator = "divide";
-  };
-  equal = () => {
-    this.state.currentNumber = this.state.input;
-    if (this.state.operator == "plus") {
-      this.setState({
-        input: parseFloat(this.state.previousNumber) + parseFloat(this.state.currentNumber)
-      });
-    } else if (this.state.operator == "minus") {
-      this.setState({
-        input: parseFloat(this.state.previousNumber) - parseFloat(this.state.currentNumber)
-      });
-    } else if (this.state.operator == "multiply") {
-      this.setState({
-        input: parseFloat(this.state.previousNumber) * parseFloat(this.state.currentNumber)
-      });
-    } else if (this.state.operator == "divide") {
-      this.setState({
-        input: parseFloat(this.state.previousNumber) / parseFloat(this.state.currentNumber)
-      });
-    }
-  };
+
+  calculate() {
+    this.setState(
+      (state) => ({
+        answerdivide: parseFloat(state.firstnumber) / parseFloat(state.secondnumber) 
+      }),
+    );
+  }
+  calculate_a() {
+    this.setState(
+      (state) => ({
+        answermultiply: parseFloat(state.firstnumber) * parseFloat(state.secondnumber) 
+      }),
+    );
+  }
+  calculate_b() {
+    this.setState(
+      (state) => ({
+        answeradd: parseFloat(state.firstnumber) + parseFloat(state.secondnumber) 
+      }),
+    );
+  }
+  calculate_c() {
+    this.setState(
+      (state) => ({
+        answersubtract: parseFloat(state.firstnumber) - parseFloat(state.secondnumber) 
+      }),
+    );
+  }
+
+  firstnumber_c(event) {
+    this.setState({ firstnumber: event.target.value });
+    this.calculate();
+    this.calculate_a();
+    this.calculate_b();
+    this.calculate_c();
+  }
+
+  secondnumber_c(event) {
+    this.setState({ secondnumber: event.target.value });
+    this.calculate();
+    this.calculate_a();
+    this.calculate_b();
+    this.calculate_c();
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="calc-wrapper">
-          <div className="row">
-            <Input>{this.state.input}</Input>
-          </div>
-          <div className="row">
-            <Button handleClick={this.addToInput}>7</Button>
-            <Button handleClick={this.addToInput}>8</Button>
-            <Button handleClick={this.addToInput}>9</Button>
-            <Button handleClick={this.divide}>/</Button>
-          </div>
-          <div className="row">
-            <Button handleClick={this.addToInput}>4</Button>
-            <Button handleClick={this.addToInput}>5</Button>
-            <Button handleClick={this.addToInput}>6</Button>
-            <Button handleClick={this.multiply}>*</Button>
-          </div>
-          <div className="row">
-            <Button handleClick={this.addToInput}>1</Button>
-            <Button handleClick={this.addToInput}>2</Button>
-            <Button handleClick={this.addToInput}>3</Button>
-            <Button handleClick={this.add}>+</Button>
-          </div>
-          <div className="row">
-            <Button handleClick={this.addDecimalToInput}>0.</Button>
-            <Button handleClick={this.addZeroToInput}>0</Button>
-            <Button handleClick={this.equal}>=</Button>
-            <Button handleClick={this.subtract}>-</Button>
-          </div>
-          <div className="row">
-            <ClearButton handleClear={this.clearInput}>Clear</ClearButton>
-          </div>
-        </div>
+      <div className="input">
+        <h4>Введите первое число: <input type="number" id="firstnumber" onInput={this.firstnumber_c} value={this.state.firstnumber} /></h4>
+        <h4>Введите второе число: <input type="number" id="secondnumber" onChange={this.secondnumber_c} value={this.state.power} /></h4>
+        <div id="answer" className="answerdivide"><h4>Частное:</h4>{this.state.answerdivide}</div>
+        <div id="answer" className="answermultiply"><h4>Произведение:</h4>{this.state.answermultiply}</div>
+        <div id="answer" className="answeradd"><h4>Сумма:</h4>{this.state.answeradd}</div>
+        <div id="answer" className="answersubtract"><h4>Разность:</h4>{this.state.answersubtract}</div>
       </div>
     );
   }
 }
-
 export default App;
