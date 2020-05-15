@@ -1,4 +1,8 @@
 import React from 'react';
+import calculate from './calculate';
+import calculate_a from './calculate_a';
+import calculate_b from './calculate_b';
+import calculate_c from './calculate_c';
 
 
 class App extends React.Component {
@@ -10,55 +14,55 @@ class App extends React.Component {
     };
     this.firstnumber_c = this.firstnumber_c.bind(this);
     this.secondnumber_c = this.secondnumber_c.bind(this);
-    this.calculate = this.calculate.bind(this);
-    this.calculate_a = this.calculate_a.bind(this);
-    this.calculate_b = this.calculate_b.bind(this);
-    this.calculate_c = this.calculate_c.bind(this);
+    this.recalculate = this.recalculate.bind(this);
+    this.recalculate_a = this.recalculate_a.bind(this);
+    this.recalculate_b = this.recalculate_b.bind(this);
+    this.recalculate_c = this.recalculate_c.bind(this);
   }
 
-  calculate() {
+  recalculate() {
     this.setState(
       (state) => ({
-        answerdivide: parseFloat(state.firstnumber) / parseFloat(state.secondnumber) 
+        answerdivide:calculate(state.firstnumber,state.secondnumber) 
       }),
     );
   }
-  calculate_a() {
+  recalculate_a() {
     this.setState(
       (state) => ({
-        answermultiply: parseFloat(state.firstnumber) * parseFloat(state.secondnumber) 
+        answermultiply: calculate_a(state.firstnumber,state.secondnumber) 
       }),
     );
   }
-  calculate_b() {
+  recalculate_b() {
     this.setState(
       (state) => ({
-        answeradd: parseFloat(state.firstnumber) + parseFloat(state.secondnumber) 
+        answeradd: calculate_b(state.firstnumber,state.secondnumber) 
       }),
     );
   }
-  calculate_c() {
+  recalculate_c() {
     this.setState(
       (state) => ({
-        answersubtract: parseFloat(state.firstnumber) - parseFloat(state.secondnumber) 
+        answersubtract: calculate_c(state.firstnumber,state.secondnumber)  
       }),
     );
   }
 
   firstnumber_c(event) {
     this.setState({ firstnumber: event.target.value });
-    this.calculate();
-    this.calculate_a();
-    this.calculate_b();
-    this.calculate_c();
+    this.recalculate();
+    this.recalculate_a();
+    this.recalculate_b();
+    this.recalculate_c();
   }
 
   secondnumber_c(event) {
     this.setState({ secondnumber: event.target.value });
-    this.calculate();
-    this.calculate_a();
-    this.calculate_b();
-    this.calculate_c();
+    this.recalculate();
+    this.recalculate_a();
+    this.recalculate_b();
+    this.recalculate_c();
   }
 
   render() {

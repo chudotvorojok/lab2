@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Проверка правильности расчётов 6+7 1`] = `
+<div
+  className="input"
+>
+  <h4>
+    Введите первое число: 
+    <input
+      id="firstnumber"
+      onInput={[Function]}
+      type="number"
+      value=""
+    />
+  </h4>
+  <h4>
+    Введите второе число: 
+    <input
+      id="secondnumber"
+      onChange={[Function]}
+      type="number"
+    />
+  </h4>
+  <div
+    className="answerdivide"
+    id="answer"
+  >
+    <h4>
+      Частное:
+    </h4>
+  </div>
+  <div
+    className="answermultiply"
+    id="answer"
+  >
+    <h4>
+      Произведение:
+    </h4>
+  </div>
+  <div
+    className="answeradd"
+    id="answer"
+  >
+    <h4>
+      Сумма:
+    </h4>
+  </div>
+  <div
+    className="answersubtract"
+    id="answer"
+  >
+    <h4>
+      Разность:
+    </h4>
+  </div>
+</div>
+`;
+
+exports[`Проверка правильности расчётов Совпадение со снапшотом 1`] = `
+<div
+  className="input"
+>
+  <h4>
+    Введите первое число: 
+    <input
+      id="firstnumber"
+      onInput={[Function]}
+      type="number"
+      value=""
+    />
+  </h4>
+  <h4>
+    Введите второе число: 
+    <input
+      id="secondnumber"
+      onChange={[Function]}
+      type="number"
+    />
+  </h4>
+  <div
+    className="answerdivide"
+    id="answer"
+  >
+    <h4>
+      Частное:
+    </h4>
+  </div>
+  <div
+    className="answermultiply"
+    id="answer"
+  >
+    <h4>
+      Произведение:
+    </h4>
+  </div>
+  <div
+    className="answeradd"
+    id="answer"
+  >
+    <h4>
+      Сумма:
+    </h4>
+  </div>
+  <div
+    className="answersubtract"
+    id="answer"
+  >
+    <h4>
+      Разность:
+    </h4>
+  </div>
+</div>
+`;
+
+exports[`Рендеринг компонента Совпадение со снапшотом 1`] = `
+<div
+  className="input"
+>
+  <h4>
+    Введите первое число: 
+    <input
+      id="firstnumber"
+      onInput={[Function]}
+      type="number"
+      value=""
+    />
+  </h4>
+  <h4>
+    Введите второе число: 
+    <input
+      id="secondnumber"
+      onChange={[Function]}
+      type="number"
+    />
+  </h4>
+  <div
+    className="answerdivide"
+    id="answer"
+  >
+    <h4>
+      Частное:
+    </h4>
+  </div>
+  <div
+    className="answermultiply"
+    id="answer"
+  >
+    <h4>
+      Произведение:
+    </h4>
+  </div>
+  <div
+    className="answeradd"
+    id="answer"
+  >
+    <h4>
+      Сумма:
+    </h4>
+  </div>
+  <div
+    className="answersubtract"
+    id="answer"
+  >
+    <h4>
+      Разность:
+    </h4>
+  </div>
+</div>
+`;
