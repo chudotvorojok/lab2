@@ -13,12 +13,12 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "webpack-build": "webpack --mode=production",
     "lint": "eslint ./src",
-    "lint:fix":"eslint ./src --fix"
+    "lint:fix": "eslint ./src --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +42,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "html-webpack-plugin": "^4.3.0"
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "html-webpack-plugin": "^4.3.0",
+    "path": "^0.12.7"
   }
 }
