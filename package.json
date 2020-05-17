@@ -15,7 +15,7 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "webpack-build": "webpack --mode=production",
