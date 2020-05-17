@@ -23,28 +23,31 @@ class App extends React.Component {
   recalculate() {
     this.setState(
       (state) => ({
-        answerdivide:calculate(state.firstnumber,state.secondnumber) 
+        answerdivide: calculate(state.firstnumber, state.secondnumber),
       }),
     );
   }
+
   recalculate_a() {
     this.setState(
       (state) => ({
-        answermultiply: calculate_a(state.firstnumber,state.secondnumber) 
+        answermultiply: calculate_a(state.firstnumber, state.secondnumber),
       }),
     );
   }
+
   recalculate_b() {
     this.setState(
       (state) => ({
-        answeradd: calculate_b(state.firstnumber,state.secondnumber) 
+        answeradd: calculate_b(state.firstnumber, state.secondnumber),
       }),
     );
   }
+
   recalculate_c() {
     this.setState(
       (state) => ({
-        answersubtract: calculate_c(state.firstnumber,state.secondnumber)  
+        answersubtract: calculate_c(state.firstnumber, state.secondnumber),
       }),
     );
   }
@@ -68,12 +71,30 @@ class App extends React.Component {
   render() {
     return (
       <div className="input">
-        <h4>Введите первое число: <input type="number" id="firstnumber" onInput={this.firstnumber_c} value={this.state.firstnumber} /></h4>
-        <h4>Введите второе число: <input type="number" id="secondnumber" onChange={this.secondnumber_c} value={this.state.power} /></h4>
-        <div id="answer" className="answerdivide"><h4>Частное:</h4>{this.state.answerdivide}</div>
-        <div id="answer" className="answermultiply"><h4>Произведение:</h4>{this.state.answermultiply}</div>
-        <div id="answer" className="answeradd"><h4>Сумма:</h4>{this.state.answeradd}</div>
-        <div id="answer" className="answersubtract"><h4>Разность:</h4>{this.state.answersubtract}</div>
+        <h4>
+          Введите первое число:
+          <input type="number" id="firstnumber" onInput={this.firstnumber_c} value={this.state.firstnumber} />
+        </h4>
+        <h4>
+          Введите второе число:
+          <input type="number" id="secondnumber" onChange={this.secondnumber_c} value={this.state.power} />
+        </h4>
+        <div id="answer" className="answerdivide">
+          <h4>Частное:</h4>
+          {this.state.answerdivide}
+        </div>
+        <div id="answer" className="answermultiply">
+          <h4>Произведение:</h4>
+          {this.state.answermultiply}
+        </div>
+        <div id="answer" className="answeradd">
+          <h4>Сумма:</h4>
+          {this.state.answeradd}
+        </div>
+        <div id="answer" className="answersubtract">
+          <h4>Разность:</h4>
+          {this.state.answersubtract}
+        </div>
       </div>
     );
   }

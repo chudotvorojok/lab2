@@ -1,4 +1,4 @@
 function calculate(a, b) {
-    return (a / b);
-  }
-  export default calculate;
+  return (a / b);
+}
+export default calculate;
