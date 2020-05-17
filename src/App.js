@@ -3,6 +3,7 @@ import calculate from './calculate';
 import calculate_a from './calculate_a';
 import calculate_b from './calculate_b';
 import calculate_c from './calculate_c';
+import "./App.css";
 
 
 class App extends React.Component {
