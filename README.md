@@ -12,3 +12,5 @@ In the project directory, you can run:
 Сборка
 ### `docker-compose up`
 Создает и запускает докер контейнер
+
+абоба
