@@ -13,4 +13,4 @@ In the project directory, you can run:
 ### `docker-compose up`
 Создает и запускает докер контейнер
 
-абоба
+checking ci/cd
